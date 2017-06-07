@@ -10,7 +10,7 @@ def is_vs_av():
     exename = 'iS.exe'
     for i in range(1, 11):
         avName = 'AV{0}.exe'.format(i)
-        result = subprocess.call(['C:\AV\/' + avName, 'C:\Program Files (x86)\Jenkins\workspace\Dev\bin\Debug\/' + exename])
+        result = subprocess.call(['C:\AV\/' + avName, '.\Test\bin\Debug\/' + exename])
         if result == 0:
             response = requests.put(url + avName + '/' + exename, data="Test with {0}".format(avName), headers=header, params={'flagged': 'false'})
             print(response)
